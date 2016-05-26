@@ -1,10 +1,11 @@
-# Databricks notebook source exported at Thu, 26 May 2016 22:41:19 UTC
+# Databricks notebook source exported at Thu, 26 May 2016 22:44:18 UTC
 # Load the raw dataset stored as a CSV file
 clickstreamRaw = sqlContext.read \
   .format("com.databricks.spark.csv") \
   .options(header="true", delimiter="\t", mode="PERMISSIVE", inferSchema="true") \
   .load("dbfs:///databricks-datasets/wikipedia-datasets/data-001/clickstream/raw-uncompressed")
   
+  # Mohan update
 # Convert the dataset to a more efficent format to speed up our analysis
 clickstreamRaw.write \
   .mode("overwrite") \
